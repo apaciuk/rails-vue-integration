@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rails Vue Integration</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'bootstrap_styles', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+    <%= render 'shared/navigation' %>
+<div class="container mt-3" data-behaviour="vue">
+	<%= yield %>
+  <app :message="<%= 'Rails Vue Integration' .to_json %>"></app>
+</div>
+</body>
+</html>
